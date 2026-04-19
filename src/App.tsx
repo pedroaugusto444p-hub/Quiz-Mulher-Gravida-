@@ -216,9 +216,9 @@ export default function App() {
         return (
           <div className="px-4 pb-4">
             <Header 
-              title="Fisio Pélvica para facilitar o parto:"
-              highlightedTitle="Você vai receber um Plano de fisio pélvica para ter um parto mais fácil."
-              subtitle="(Selecione sua idade abaixo para começar a gerar seu plano)"
+              title="Descubra o seu nível de preparo para ter um parto natural de 3 horas"
+              highlightedTitle="(e risco zero de laceração)."
+              subtitle="Selecione a sua idade abaixo para iniciar sua análise biomecânica rápida."
             />
             <div className="grid grid-cols-2 gap-4">
               {[
@@ -392,10 +392,10 @@ export default function App() {
           <div className="px-4">
             <Header title="Qual é o seu principal objetivo" subtitle="Escolha uma ou mais opções para avançar" />
             {[
-              { label: 'Quero me sentir confiante e preparada para o parto', emoji: '✨' },
-              { label: 'Quero preparar meu corpo para o parto', emoji: '🤰' },
-              { label: 'Quero ter um parto mais fácil', emoji: '🚀' },
-              { label: 'Quero evitar machucados íntimos, como laceração e episiotomia', emoji: '🛡️' },
+              { label: 'Assumir o controle do meu corpo e perder o medo do parto.', emoji: '✨' },
+              { label: 'Encaixar o bebê na posição perfeita para nascer.', emoji: '🤰' },
+              { label: 'Ter um trabalho de parto muito mais rápido e fácil (reduzir as horas de dor).', emoji: '🚀' },
+              { label: 'Risco zero de lacerações ou cortes (proteger minha região íntima).', emoji: '🛡️' },
               { label: 'Outros', emoji: '➕' }
             ].map(opt => (
               <MultiOptionCard 
@@ -470,7 +470,7 @@ export default function App() {
         );
 
       case 'analyzing_85':
-        return <LoadingScreen progress={85} duration={14000} title="Analisando seus dados e finalizando seu plano..." next={() => nextStep('result_warning')} />;
+        return <LoadingScreen progress={85} duration={8000} title="Analisando seus dados e finalizando seu plano..." next={() => nextStep('result_warning')} />;
 
       case 'result_warning':
         return (
@@ -589,8 +589,8 @@ export default function App() {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { icon: '💼', title: 'Rotina pesada de trabalho', desc: 'Trabalhar é ótimo, mas quanto mais pesada é a carga, mais tenso fica o corpo.' },
-                { icon: '😢', title: 'Medo do parto', desc: 'Isso deixa nosso corpo enrijecido, bloqueando a passagem do bebê.' },
-                { icon: '💪', title: 'Sedentarismo', desc: 'O movimento é o responsável por deixar nosso corpo flexível.' },
+                { icon: '😢', title: 'O medo trava a pelve', desc: 'O nervosismo e a tensão bloqueiam a passagem do bebê e aumentam a dor das contrações.' },
+                { icon: '💪', title: 'Falta de mobilidade pélvica', desc: 'Não movimentar os músculos certos deixa a "porta de saída" rígida.' },
                 { icon: '📱', title: 'Excesso de informação', desc: 'As redes sociais e as palpiteiras nos deixam confusas e tensas.' }
               ].map((item, idx) => (
                 <div key={idx} className="bg-white p-4 rounded-2xl border-2 border-slate-50 text-center flex flex-col items-center">
@@ -741,15 +741,12 @@ export default function App() {
         return (
           <div className="px-4 pt-8 pb-32">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-green-700 mb-2">Seu Plano <span className="text-black">está pronto.</span></h2>
+              <h2 className="text-3xl font-bold text-green-700 mb-2">Seu Plano <span className="text-black">está pronto.</span></h2>
               <p className="text-sm font-bold leading-tight px-4">Você vai receber os exercícios de Fisio Pélvica que realmente funcionam para facilitar seu parto.</p>
             </div>
 
             <div className="grid grid-cols-2 gap-4 mb-10 pt-4">
               <div className="bg-red-50 p-4 rounded-[32px] border border-red-100 opacity-90">
-                <div className="aspect-square mb-4 rounded-2xl overflow-hidden bg-slate-200 grayscale opacity-40 mix-blend-multiply relative">
-                   <img src="https://i.ibb.co/cSttHKKr/enhanced-Gemini-Generated-Image-d9pmnpd9pmnpd9pm.png" className="w-full h-full object-cover blur-[2px] scale-110" referrerPolicy="no-referrer" alt="Antes" />
-                </div>
                 <h4 className="text-center text-red-700 font-bold text-[11px] mb-3 leading-tight uppercase tracking-tight">Antes do Movimento Materno</h4>
                 <ul className="text-[10px] text-slate-600 flex flex-col gap-1.5 font-medium">
                   <li className="flex gap-2"><span>▪️</span> Sem energia</li>
@@ -760,9 +757,6 @@ export default function App() {
               </div>
               <div className="bg-green-100 p-4 rounded-[32px] border-2 border-green-600 shadow-2xl shadow-green-200 scale-105 relative z-10 transition-transform hover:scale-110 duration-500">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white text-[8px] font-black px-3 py-1 rounded-full whitespace-nowrap uppercase shadow-lg ring-2 ring-white">Julia Mendes (Aluna)</div>
-                <div className="aspect-square mb-4 rounded-2xl overflow-hidden border-2 border-green-500 shadow-md">
-                   <img src="https://i.ibb.co/cSttHKKr/enhanced-Gemini-Generated-Image-d9pmnpd9pmnpd9pm.png" className="w-full h-full object-cover" referrerPolicy="no-referrer" alt="Depois" />
-                </div>
                 <h4 className="text-center text-green-700 font-black text-[11px] mb-3 leading-tight uppercase tracking-tight">Depois do Movimento Materno</h4>
                 <ul className="text-[10px] text-slate-800 flex flex-col gap-1.5">
                   <li className="flex gap-2 font-bold"><Check className="w-3 h-3 text-green-600 flex-shrink-0" /> Mais disposição</li>
@@ -804,7 +798,10 @@ export default function App() {
               </p>
             </div>
 
-            <button className="btn-primary w-full h-16 text-xl font-black uppercase tracking-wider shadow-2xl shadow-green-400 active:scale-95 transition-transform whitespace-nowrap">
+            <button 
+              onClick={() => window.location.href = 'https://checkout.protocolodestrave.shop/VCCL1O8SD044'}
+              className="btn-primary w-full h-16 text-xl font-black uppercase tracking-wider shadow-2xl shadow-green-400 active:scale-95 transition-transform whitespace-nowrap"
+            >
               Quero meu plano
             </button>
 
@@ -826,25 +823,91 @@ export default function App() {
                     </div>
                   </div>
                </div>
+
+               <div className="max-w-[340px] mx-auto mb-10 overflow-hidden rounded-[30px] shadow-lg border-2 border-slate-100">
+                  <img src="https://i.ibb.co/N6p32vxt/Design-sem-nome.jpg" alt="Design Bonus" className="w-full h-auto" referrerPolicy="no-referrer" />
+               </div>
+
+               {/* New Benefits List from Image */}
+               <div className="text-left px-4 mb-12 space-y-8">
+                  <div className="flex gap-4">
+                     <span className="text-xl">✅</span>
+                     <div>
+                        <p className="text-[17px] font-black text-slate-900 leading-tight">
+                           +40 Exercícios para fazer em casa (videoaulas)
+                        </p>
+                        <p className="text-[14px] text-slate-600 mt-1">
+                           Receba os <span className="font-medium">exercícios seguros</span> para <span className="font-bold text-slate-900">facilitar seu parto.</span>
+                        </p>
+                     </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                     <span className="text-xl">✅</span>
+                     <div>
+                        <p className="text-[17px] font-black text-slate-900 leading-tight">
+                           Tensão reduzida na
+                        </p>
+                        <p className="text-[14px] text-slate-600 mt-1">
+                           pelve, costas, ciático, pescoço e região íntima
+                        </p>
+                     </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                     <span className="text-xl">✅</span>
+                     <div>
+                        <p className="text-[17px] font-black text-slate-900 leading-tight">
+                           Redução do estresse e das preocupações
+                        </p>
+                        <p className="text-[14px] text-slate-600 mt-1">
+                           e sensação de mais relaxamento e calma
+                        </p>
+                     </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                     <span className="text-xl">✅</span>
+                     <div>
+                        <p className="text-[17px] font-black text-slate-900 leading-tight">
+                           Melhora do sono
+                        </p>
+                        <p className="text-[17px] font-black text-slate-900 leading-tight">
+                           e melhor qualidade de descanso
+                        </p>
+                     </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                     <span className="text-xl">✅</span>
+                     <div>
+                        <p className="text-[17px] font-black text-slate-900 leading-tight">
+                           Tempo de acesso: 12 meses
+                        </p>
+                     </div>
+                  </div>
+               </div>
                
-               <div className="bg-slate-50 p-8 rounded-[50px] text-left border border-slate-200 shadow-inner">
-                  <h3 className="text-lg font-black text-slate-800 mb-8 flex items-center gap-3">
-                    <Check className="w-6 h-6 p-1 bg-green-100 text-green-700 rounded-lg" /> 
-                    BÔNUS EXCLUSIVOS (GRÁTIS)
+               <div className="bg-green-50 border-2 border-dashed border-green-600 p-8 rounded-[50px] text-left shadow-xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 bg-green-600 text-white text-[10px] font-black px-4 py-1 rounded-bl-2xl uppercase">Oferta Limitada</div>
+                  
+                  <h3 className="text-xl font-black text-green-800 mb-2 leading-tight">
+                    Só para as 20 primeiras inscritas de hoje:
                   </h3>
+                  <p className="text-[14px] text-green-700 font-medium mb-8 leading-tight">
+                    Além do plano de exercícios, veja os presentes que você vai receber ao garantir uma das 20 vagas de hoje:
+                  </p>
+
                   <div className="space-y-6">
                      {[
-                       { title: 'Aulão sobre enxoval completo', desc: 'Não gaste dinheiro com o que não precisa.' },
-                       { title: 'Passo-a-passo: Respiração no parto', desc: 'Como usar a respiração para aliviar a dor.' },
-                       { title: 'Exercícios de alívio imediato', desc: 'Para usar no dia do seu parto e em casa.' },
-                       { title: 'Prevenção de Diástase', desc: 'Protocolo para manter a barriga saudável.' }
+                       { title: 'Aulão sobre enxoval', emoji: '🎁' },
+                       { title: 'Passo a passo: Como respirar no Trabalho de parto', emoji: '🎁' },
+                       { title: 'Exercícios para fazer durante o trabalho de parto', emoji: '🎁' },
+                       { title: 'Exercício para reduzir o avanço da diástase', emoji: '🎁' }
                      ].map((item, idx) => (
-                       <div key={idx} className="flex gap-4">
-                          <Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
-                          <div>
-                             <p className="text-[14px] font-black text-slate-900 leading-none mb-1">{item.title}</p>
-                             <p className="text-[12px] text-slate-500 font-medium">{item.desc}</p>
-                          </div>
+                       <div key={idx} className="flex gap-4 items-center bg-white/50 p-3 rounded-2xl border border-green-100">
+                          <span className="text-2xl">{item.emoji}</span>
+                          <p className="text-[14px] font-bold text-slate-800 leading-tight">{item.title}</p>
                        </div>
                      ))}
                   </div>
@@ -866,10 +929,144 @@ export default function App() {
                     Eu tiro todo o risco das suas costas. Se você não amar o conteúdo em até 7 dias, mande um e-mail e eu devolvo <span className="text-slate-900 font-bold">100% do seu dinheiro.</span> Sem perguntas e sem letras miúdas.
                   </p>
                   
-                  <button className="btn-primary w-full h-20 text-lg bg-slate-900 shadow-xl shadow-slate-200 hover:bg-slate-800 whitespace-nowrap px-4 font-black uppercase tracking-tight">
+                  <button 
+                    onClick={() => window.location.href = 'https://checkout.protocolodestrave.shop/VCCL1O8SD044'}
+                    className="btn-primary w-full h-20 text-base bg-slate-900 shadow-xl shadow-slate-200 hover:bg-slate-800 px-4 font-black uppercase tracking-tight"
+                  >
                     Ativar Acesso com Segurança
                   </button>
                </div>
+            </div>
+
+            {/* Julia Bio Copy from Loading Screen */}
+            <div className="w-full px-4 mb-20 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+                <h3 className="text-2xl font-bold text-slate-900 mb-8 px-2 leading-tight text-center">
+                  Conheça a idealizadora do Movimento Materno
+                </h3>
+
+                <div className="relative mb-10 max-w-[340px] mx-auto group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-[40px] blur opacity-25 transition duration-1000"></div>
+                  <img 
+                    src="https://i.ibb.co/cSttHKKr/enhanced-Gemini-Generated-Image-d9pmnpd9pmnpd9pm.png" 
+                    alt="Julia Mendes" 
+                    className="relative w-full h-auto rounded-[36px] shadow-2xl border-4 border-white" 
+                    referrerPolicy="no-referrer" 
+                  />
+                </div>
+
+                <div className="text-left px-4 space-y-4 text-[15px] leading-relaxed text-slate-700">
+                   <p>Oii, Dona grávida. Sou a <span className="font-bold text-black">Julia Mendes</span>, Fisioterapeuta Pélvica e coordenadora de Pós-graduação em Fisioterapia Obstétrica.</p>
+                   <p><span className="font-bold text-black text-[16px]">Já atendi mais de 1500 grávidas pessoalmente</span> e milhares de outras através das minhas redes sociais e programas online.</p>
+                   <p>Minha maior missão é ajudar o maior número de grávidas a terem <span className="font-bold text-black">o melhor parto possível</span>.</p>
+                   <p>Saiba que será um prazer te ajudar. Conte comigo.</p>
+                </div>
+            </div>
+
+            {/* Final Offer Call to Action */}
+            <div className="px-4 mb-20">
+               {/* Red Date Bar */}
+               <div className="bg-red-600 text-white text-[11px] font-black py-2.5 rounded-t-[20px] text-center uppercase tracking-wider px-4">
+                  A oferta está disponível hoje: {new Date().toLocaleDateString('pt-BR')}
+               </div>
+
+               <div className="bg-white rounded-b-[40px] rounded-t-none p-1 border-4 border-t-0 border-green-600 mb-8 overflow-hidden shadow-2xl shadow-green-200 relative">
+                  <div className="bg-green-600 text-white text-[12px] font-black text-center py-2.5 uppercase tracking-[0.2em]">Oferta Exclusiva Liberada</div>
+                  
+                  {/* Discount Badge */}
+                  <div className="absolute top-10 right-4 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-full animate-bounce shadow-lg">
+                    85% OFF
+                  </div>
+
+                  <div className="p-8 text-center">
+                     <p className="text-[15px] font-bold mb-6 text-slate-800 leading-tight">Acesso vitalício ao Movimento Materno</p>
+                     <div className="flex flex-col items-center justify-center gap-1 mb-2">
+                        <p className="text-[13px] text-slate-900 font-bold relative inline-block">
+                        De R$ 197 Por
+                        <span className="absolute left-14 right-0 top-1/2 h-[2px] bg-red-600/80 -rotate-3" />
+                        </p>
+                        <div className="flex items-baseline gap-1">
+                        <span className="text-2xl font-black text-green-700">R$</span>
+                        <span className="text-6xl font-black text-green-700 leading-none">29,90</span>
+                        </div>
+                     </div>
+                     <p className="text-[11px] text-slate-500 font-medium">Pagamento único · Acesso imediato no E-mail</p>
+                  </div>
+               </div>
+
+               <button 
+                 onClick={() => window.location.href = 'https://checkout.protocolodestrave.shop/VCCL1O8SD044'}
+                 className="btn-primary w-full h-20 text-xl font-black uppercase tracking-wider shadow-2xl shadow-green-400 active:scale-95 transition-transform"
+               >
+                  Quero meu plano
+               </button>
+
+               <div className="text-center mt-6">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-100 rounded-full text-[10px] font-bold text-slate-500">
+                     <Star className="w-3 h-3 fill-slate-400" />
+                     ENTREGA IMEDIATA NO SEU E-MAIL
+                  </div>
+               </div>
+            </div>
+
+            {/* Legal Disclaimer Section */}
+            <div className="px-6 pb-12 text-center">
+              <div className="bg-slate-50 border border-slate-200 p-8 rounded-[40px] shadow-inner">
+                <h4 className="text-[12px] font-black text-slate-400 uppercase tracking-widest mb-4">Aviso Legal</h4>
+                <p className="text-[11px] leading-relaxed text-slate-500 font-medium">
+                  Este produto não substitui o parecer médico profissional. Sempre consulte um médico para tratar de assuntos relativos à saúde. Recomendamos o acompanhamento médico com periodicidade e para tratamento de queixas.
+                </p>
+              </div>
+            </div>
+
+            {/* FAQ Section */}
+            <div className="px-6 pb-32 text-left">
+              <h3 className="text-xl font-black text-slate-900 mb-8 uppercase tracking-tight">PERGUNTAS FREQUENTES:</h3>
+              <div className="space-y-8">
+                <div>
+                  <h4 className="font-bold text-slate-900 flex items-start gap-2 mb-2 leading-snug">
+                    <span className="flex-shrink-0">🟢</span> Quero parto normal, esses exercícios ajudam?
+                  </h4>
+                  <p className="text-[14px] text-slate-600 leading-relaxed pl-7">
+                    Com certeza, você vai receber os melhores exercícios de fisio pélvica pensados para facilitar seu parto normal.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-slate-900 flex items-start gap-2 mb-2 leading-snug">
+                    <span className="flex-shrink-0">🟢</span> A partir de quantas semanas posso começar a praticar?
+                  </h4>
+                  <p className="text-[14px] text-slate-600 leading-relaxed pl-7">
+                    Você está recebendo exercícios que foram feitos para o corpo da grávida, por isso, pode começar a praticar a partir do momento que você descobre que está grávida até o dia do parto.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-slate-900 flex items-start gap-2 mb-2 leading-snug">
+                    <span className="flex-shrink-0">🟢</span> Tem vídeo demonstrando os exercícios?
+                  </h4>
+                  <p className="text-[14px] text-slate-600 leading-relaxed pl-7">
+                    Sim, no nosso plano você recebe um vídeo com o passo a passo e como realizar cada movimento da forma correta para que em poucos dias você comece a sentir os benefícios.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-slate-900 flex items-start gap-2 mb-2 leading-snug">
+                    <span className="flex-shrink-0">🟢</span> Onde receberei o acesso ao Plano de exercícios?
+                  </h4>
+                  <p className="text-[14px] text-slate-600 leading-relaxed pl-7">
+                    Você receberá acesso imediatamente após realizar a inscrição via whatsapp e e-mail.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-slate-900 flex items-start gap-2 mb-2 leading-snug">
+                    <span className="flex-shrink-0">🟢</span> Quanto tempo terei de acesso?
+                  </h4>
+                  <p className="text-[14px] text-slate-600 leading-relaxed pl-7">
+                    Você paga uma única vez o valor de R$29,90 e terá acesso por 12 meses a todo conteúdo
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         );
@@ -877,7 +1074,7 @@ export default function App() {
       case 'testimonials_grid':
         return (
           <div className="px-4 pt-10 pb-20 text-center">
-             <h2 className="text-2xl font-bold text-slate-900 mb-2 leading-tight px-6 text-center">
+             <h2 className="text-3xl font-bold text-slate-900 mb-2 leading-tight px-6 text-center">
                Relatos de grávidas que passaram pelo Movimento Materno.
              </h2>
              <p className="text-[13px] text-blue-900/60 font-medium mb-8 px-8 text-center mx-auto max-w-xs">
@@ -888,74 +1085,16 @@ export default function App() {
                Continuar
              </button>
 
-             <div className="space-y-12">
-                {/* Testimonial 1 - Story/DM style */}
-                <div className="max-w-[280px] mx-auto bg-white rounded-3xl shadow-xl p-4 transform rotate-1 border border-slate-50">
-                    <div className="bg-slate-50 p-3 rounded-2xl text-left">
-                       <p className="text-[10px] text-slate-400 mb-2">Respondendo ao seu story</p>
-                       <div className="w-16 h-24 bg-slate-200 rounded-lg mb-3 overflow-hidden">
-                          <img src="https://picsum.photos/seed/story/200/300" className="w-full h-full object-cover" alt="Story" referrerPolicy="no-referrer" />
-                       </div>
-                       <p className="text-[11px] leading-relaxed text-slate-800">
-                         Boa tarde quarta-feira ganhei minha bebê meu parto foi super rápido cheguei as 7 da manhã na maternidade quando foi 9 horas minha bebê nasceu seguindo o movimento materno que me ajudou muito fico agradecida as suas dicas Julia. ❤️
-                       </p>
-                    </div>
-                </div>
-
-                {/* Testimonial 2 - Card with large photo and quote */}
-                <div className="bg-white rounded-[40px] shadow-2xl overflow-hidden max-w-[320px] mx-auto border border-slate-50">
-                    <div className="relative aspect-square">
-                       <img src="https://i.ibb.co/cSttHKKr/enhanced-Gemini-Generated-Image-d9pmnpd9pmnpd9pm.png" className="w-full h-full object-cover" alt="Julia mendes" referrerPolicy="no-referrer" />
-                       <div className="absolute bottom-4 right-4 bg-green-800/90 py-1.5 px-3 text-white font-bold text-[8px] uppercase rounded-full border border-white/20">
-                          Depoimento de ALUNA<br/>do Movimento Materno
-                       </div>
-                    </div>
-                    <div className="p-8 text-left">
-                       <span className="text-4xl text-red-100 font-serif block mb-[-20px]">“</span>
-                       <p className="text-[13px] leading-relaxed text-slate-700 font-medium mb-4 italic">
-                        Eu sabia tudo que me esperava, que movimentos fazer, como respirar, fazer força. Um parto muito mais lindo do que imaginava e sei que sem a Julia não teria sido tão incrível.
-                       </p>
-                       <div className="flex items-center gap-2">
-                          <span className="font-bold text-red-500 text-[11px] uppercase tracking-wider">JULIA MENDES, 32</span>
-                          <span className="text-[11px] text-slate-400">· Parto Normal</span>
-                       </div>
-                    </div>
-                </div>
-
-                {/* Testimonial 3 - Horizontal Collage */}
-                <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-2 flex gap-2">
-                   <div className="grid grid-cols-2 gap-2 flex-[0.7]">
-                      <img src="https://picsum.photos/seed/test1/300/300" className="rounded-xl w-full aspect-square object-cover" alt="T1" referrerPolicy="no-referrer" />
-                      <img src="https://picsum.photos/seed/test2/300/300" className="rounded-xl w-full aspect-square object-cover" alt="T2" referrerPolicy="no-referrer" />
-                      <img src="https://picsum.photos/seed/test3/300/300" className="rounded-xl w-full aspect-square object-cover" alt="T3" referrerPolicy="no-referrer" />
-                      <img src="https://picsum.photos/seed/test4/300/300" className="rounded-xl w-full aspect-square object-cover" alt="T4" referrerPolicy="no-referrer" />
-                   </div>
-                   <div className="flex-1 text-left p-2 flex flex-col justify-center">
-                    <span className="text-2xl text-red-100 font-serif mb-[-10px]">“</span>
-                    <p className="text-[10px] leading-relaxed text-slate-600 font-medium italic mb-2">
-                      Comecei com 33 semanas e meu parto foi normal, rápido e sem sofrimento. Eu sabia exatamente o que estava acontecendo e o que fazer.
-                    </p>
-                    <p className="text-[10px] font-bold text-red-500 uppercase">SUAINA ALMEIDA, 30</p>
-                   </div>
-                </div>
-
-                {/* Testimonial 4 - Large text + Baby */}
-                <div className="bg-white rounded-[40px] shadow-sm border border-slate-100 p-6 text-left space-y-4">
-                   <div className="bg-slate-50/80 p-5 rounded-3xl border-l-[3px] border-red-500">
-                      <p className="text-[13px] font-bold text-slate-800 leading-tight underline decoration-red-200 underline-offset-4">
-                        Gestação maravilhosa sem dores ou incômodos, parto e pós parto maravilhosos tbm.
-                      </p>
-                      <p className="text-[13px] text-slate-700 mt-2">
-                         Obrigada por tudo, passei por tudo com a maior tranquilidade, com teu respaldo. Obrigada Obrigada
-                      </p>
-                   </div>
-                   <div className="relative aspect-[3/4] max-w-[200px] mx-auto rounded-[30px] overflow-hidden shadow-2xl border-4 border-white">
-                      <img src="https://picsum.photos/seed/baby/600/800" className="w-full h-full object-cover" alt="Baby" referrerPolicy="no-referrer" />
-                      <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-1.5 rounded-full">
-                         <Baby className="w-4 h-4 text-white" />
-                      </div>
-                   </div>
-                </div>
+             <div className="space-y-8">
+                {[
+                  "https://i.ibb.co/chNrqnXV/Screenshot-14.png",
+                  "https://i.ibb.co/9kdNmjDg/Screenshot-12.png",
+                  "https://i.ibb.co/gMMRHj9w/Screenshot-13.png"
+                ].map((url, i) => (
+                  <div key={i} className="bg-white rounded-[32px] shadow-xl overflow-hidden border border-slate-100 mx-auto max-w-[340px] transform hover:scale-[1.02] transition-transform duration-300">
+                    <img src={url} className="w-full h-auto" alt={`Relato ${i + 1}`} referrerPolicy="no-referrer" />
+                  </div>
+                ))}
              </div>
 
              <div className="mt-16 mb-10 text-center">
@@ -1043,89 +1182,47 @@ const LoadingScreen = ({ progress, title, next, duration = 3000 }: { progress: n
         </div>
       </div>
       
-      <h2 className={`text-2xl font-bold mb-8 px-6 leading-tight ${progress === 94 ? 'text-red-600 mb-12' : 'text-slate-900'}`}>{title}</h2>
+      <h2 className={`text-3xl font-bold mb-8 px-6 leading-tight ${progress === 94 ? 'text-red-600 mb-12' : 'text-slate-900'}`}>{title}</h2>
       
       {progress === 40 && (
-        <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 max-w-sm mx-auto">
+        <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-1000 max-w-sm mx-auto px-4">
           <h3 className="text-lg font-bold text-slate-800">Enquanto isso: conheça a idealizadora do Movimento Materno</h3>
-          <div className="bg-white p-4 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center max-w-[280px] mx-auto">
-            <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-slate-50">
-              <img src="https://i.ibb.co/cSttHKKr/enhanced-Gemini-Generated-Image-d9pmnpd9pmnpd9pm.png" alt="Julia" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-            </div>
-            <h4 className="font-bold text-sm">Julia Mendes</h4>
-            <div className="flex gap-4 mt-2 text-[10px] text-slate-400 font-medium">
-              <div className="text-center"><p className="text-black font-bold">1.278</p><p>publicações</p></div>
-              <div className="text-center"><p className="text-black font-bold">436 mil</p><p>seguidores</p></div>
-              <div className="text-center"><p className="text-black font-bold">181</p><p>seguindo</p></div>
-            </div>
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-[32px] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <img 
+              src="https://i.ibb.co/cSttHKKr/enhanced-Gemini-Generated-Image-d9pmnpd9pmnpd9pm.png" 
+              alt="Julia Mendes" 
+              className="relative w-full h-auto rounded-[28px] shadow-xl border-4 border-white" 
+              referrerPolicy="no-referrer" 
+            />
           </div>
-          <div className="text-left px-8 space-y-4">
+          <div className="text-left space-y-3">
+             <h4 className="font-bold text-lg text-slate-900">Julia Mendes</h4>
              <p className="text-[13px] leading-relaxed text-slate-600 italic">
-               "Sua maior missão é ajudar o maior número de grávidas a terem <span className="text-black font-bold">o melhor parto possível</span>."
+               "Minha maior missão é ajudar o maior número de grávidas a terem <span className="text-black font-bold">o melhor parto possível</span>."
              </p>
           </div>
         </div>
       )}
 
       {progress === 94 && (
-        <div className="w-full animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            <h3 className="text-2xl font-bold text-slate-900 mb-8 px-6 leading-tight">
+        <div className="w-full animate-in fade-in slide-in-from-bottom-4 duration-1000 px-4">
+            <h3 className="text-2xl font-bold text-slate-900 mb-8 px-2 leading-tight">
               Enquanto isso: conheça a idealizadora do Movimento Materno
             </h3>
 
-            {/* Instagram Style Card */}
-            <div className="bg-white rounded-[40px] shadow-2xl p-6 mb-8 max-w-[340px] mx-auto border border-slate-50">
-               <div className="flex items-center justify-between mb-4 px-2">
-                 <div className="flex items-center gap-1">
-                   <ChevronRight className="w-4 h-4 rotate-180" />
-                   <span className="font-bold text-[15px]">juliamendes</span>
-                   <div className="bg-blue-500 rounded-full p-0.5">
-                     <Check className="w-2 h-2 text-white" />
-                   </div>
-                 </div>
-                 <div className="flex items-center gap-4 text-slate-800">
-                    <div className="relative">
-                      <Bell className="w-5 h-5" />
-                      <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-red-500 rounded-full border border-white"></div>
-                    </div>
-                    <MoreHorizontal className="w-5 h-5" />
-                 </div>
-               </div>
-
-               <div className="flex items-center gap-6 mb-4 px-2">
-                 <div className="w-18 h-18 rounded-full overflow-hidden ring-2 ring-slate-100 p-0.5 flex-shrink-0">
-                   <img src="https://i.ibb.co/cSttHKKr/enhanced-Gemini-Generated-Image-d9pmnpd9pmnpd9pm.png" alt="Julia" className="w-full h-full object-cover rounded-full" referrerPolicy="no-referrer" />
-                 </div>
-                 <div className="flex gap-4 flex-1">
-                    <div className="text-center flex-1">
-                      <p className="text-[15px] font-bold text-black">1.278</p>
-                      <p className="text-[10px] text-slate-500 font-medium">publicações</p>
-                    </div>
-                    <div className="text-center flex-1">
-                      <p className="text-[15px] font-bold text-black">436 mil</p>
-                      <p className="text-[10px] text-slate-500 font-medium">seguidores</p>
-                    </div>
-                    <div className="text-center flex-1">
-                      <p className="text-[15px] font-bold text-black">181</p>
-                      <p className="text-[10px] text-slate-500 font-medium">seguindo</p>
-                    </div>
-                 </div>
-               </div>
-
-               <div className="text-left px-2">
-                 <h4 className="font-bold text-[13px] text-black mb-0.5">Julia Mendes</h4>
-                 <p className="text-slate-500 text-[11px] font-medium mb-1">Criador(a) de conteúdo digital</p>
-                 <div className="text-[11px] text-slate-800 space-y-0.5 leading-snug font-medium">
-                   <p>🌻 fisio pélvica especialista em grávidas USP</p>
-                   <p>🎓 prof de fisioterapeutas @escolamaterna</p>
-                   <p>🌍 Cuido de grávidas em qualquer lugar do mundo 👇</p>
-                   <p className="text-blue-900 font-semibold opacity-80">Ver tradução</p>
-                 </div>
-               </div>
+            <div className="relative mb-10 max-w-[340px] mx-auto group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-[40px] blur opacity-25 transition duration-1000"></div>
+              <img 
+                src="https://i.ibb.co/cSttHKKr/enhanced-Gemini-Generated-Image-d9pmnpd9pmnpd9pm.png" 
+                alt="Julia Mendes" 
+                className="relative w-full h-auto rounded-[36px] shadow-2xl border-4 border-white" 
+                referrerPolicy="no-referrer" 
+              />
             </div>
 
             {/* Bio Body Text */}
-            <div className="text-left px-6 space-y-4 text-[15px] leading-relaxed text-slate-700">
+            <div className="text-left px-4 space-y-4 text-[15px] leading-relaxed text-slate-700">
                <p>Oii, Dona grávida. Sou a <span className="font-bold text-black">Julia Mendes</span>, Fisioterapeuta Pélvica e coordenadora de Pós-graduação em Fisioterapia Obstétrica.</p>
                <p><span className="font-bold text-black text-[16px]">Já atendi mais de 1500 grávidas pessoalmente</span> e milhares de outras através das minhas redes sociais e programas online.</p>
                <p>Minha maior missão é ajudar o maior número de grávidas a terem <span className="font-bold text-black">o melhor parto possível</span>.</p>
@@ -1136,77 +1233,65 @@ const LoadingScreen = ({ progress, title, next, duration = 3000 }: { progress: n
 
       {progress === 85 && (
         <div className="w-full max-w-md mx-auto animate-in fade-in slide-in-from-bottom-4 duration-1000">
-           <h3 className="text-[17px] font-bold px-4 mb-10 leading-snug">
+           <h3 className="text-[17px] font-bold px-4 mb-8 leading-snug">
               Alunas que praticaram o <span className="text-primary-green">Movimento Materno</span> durante a gravidez, <span className="text-primary-green">realizadas depois de seu parto</span>
            </h3>
            
-           <div className="grid grid-cols-2 gap-4 px-2 relative h-[380px]">
-              {/* Left Testimonial Card */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="relative h-full"
-              >
-                <div className="absolute top-4 left-[-10px] right-2 bottom-6 bg-white rounded-2xl shadow-xl overflow-hidden rotate-[-2deg] border border-slate-100">
-                   <img 
-                     src="https://images.unsplash.com/photo-1555252333-9f8e92e65ee9?q=80&w=800&auto=format&fit=crop" 
-                     className="w-full h-full object-cover" 
-                     alt="Depoimento Aluna" 
-                     referrerPolicy="no-referrer" 
-                   />
-                   <div className="absolute bottom-0 left-0 right-0 bg-primary-green/90 py-2 px-2 text-white font-bold text-[8px] uppercase tracking-tighter text-left">
-                     Depoimento de ALUNA<br/>do Movimento Materno
-                   </div>
-                </div>
-              </motion.div>
-
-              {/* Right Testimonial Collage */}
-              <div className="flex flex-col gap-4 relative h-full pt-10">
-                {/* Top Right Background Leaf Logo (Simplified) */}
-                <div className="absolute top-0 right-4 opacity-20 transform translate-y-[-20px]">
-                   <Baby className="w-16 h-16 text-primary-green" />
-                </div>
-
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.8 }}
-                  className="bg-white p-2 rounded-2xl shadow-xl rotate-[3deg] relative z-10 border border-slate-100"
-                >
-                  <div className="absolute top-[-10px] left-0 right-0 flex justify-center z-20">
-                     <div className="bg-primary-green/90 py-1 px-3 text-white font-bold text-[7px] uppercase rounded-full flex items-center gap-1">
-                        <LeafIcon className="w-2 h-2" /> Depoimento de ALUNA do Movimento Materno
-                     </div>
-                  </div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1536640712247-c45474d47d0f?q=80&w=800&auto=format&fit=crop" 
-                    className="w-full aspect-square object-cover rounded-xl" 
-                    alt="Pai e bebê" 
-                    referrerPolicy="no-referrer" 
-                  />
-                </motion.div>
-
-                <motion.div 
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.1 }}
-                  className="bg-white p-1 rounded-2xl shadow-2xl rotate-[-5deg] relative z-20 mt-[-40px] border border-slate-100"
-                >
-                  <img 
-                    src="https://images.unsplash.com/photo-1544126592-807daa2b565b?q=80&w=800&auto=format&fit=crop" 
-                    className="w-full aspect-square object-cover rounded-xl" 
-                    alt="Mãe e bebê" 
-                    referrerPolicy="no-referrer" 
-                  />
-                </motion.div>
-              </div>
+           <div className="px-4 relative h-[400px]">
+              <TestimonialCarousel />
            </div>
         </div>
       )}
     </div>
   )
 }
+
+const TestimonialCarousel = () => {
+  const images = [
+    "https://i.ibb.co/wqxnvQ1/Screenshot-9.png",
+    "https://i.ibb.co/DHhw5NzX/Screenshot-10.png",
+    "https://i.ibb.co/ycbKPMpt/Screenshot-11.png"
+  ];
+  
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <div className="relative w-full h-full flex items-center justify-center">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, scale: 0.9, x: 20 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          exit={{ opacity: 0, scale: 1.1, x: -20 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          className="absolute inset-0 bg-white rounded-[40px] shadow-2xl overflow-hidden border-4 border-white"
+        >
+          <img 
+            src={images[index]} 
+            className="w-full h-full object-cover" 
+            alt={`Depoimento ${index + 1}`} 
+            referrerPolicy="no-referrer" 
+          />
+          <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2">
+            {images.map((_, i) => (
+              <div 
+                key={i} 
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${i === index ? 'bg-green-600 w-6' : 'bg-slate-300'}`} 
+              />
+            ))}
+          </div>
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const LeafIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
